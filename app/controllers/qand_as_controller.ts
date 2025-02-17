@@ -25,5 +25,3 @@ const qas: QandA[] = [
 export default class QandAsController {
 
 }
-
-
