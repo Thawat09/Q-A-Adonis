@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      {{ title }}
+    </title>
+    <link rel="stylesheet" type="text/css" href="/semantic/semantic.min.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.min.js"
+      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+      crossorigin="anonymous">
+    </script>
+    <script src="/semantic/semantic.min.js"></script>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @if($slots.style)
+      {{{ await $slots.style() }}}
+    @end
+  </head>
+  <body>
+    <div class="ui container">
+      {{{ await $slots.main() }}}
+    </div>
+    @if($slots.script)
+      {{{ await $slots.script() }}}
+    @end
+  </body>
+</html>
