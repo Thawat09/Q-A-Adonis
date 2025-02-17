@@ -1,3 +1,19 @@
-<h1 class="ui aligned center header">AdonisJS Q&A</h1>
-@include('partials/QASearch')
-@include('partials/QAAccordion')
+@layouts.master({ title: 'Q&A'})
+  <h1 class="ui aligned center header">
+    AdonisJS Q&A
+  </h1>
+  @include('partials/QASearch')
+  @include('partials/QAAccordion')
+
+  @slot('script')
+    <script>
+      $(document).ready(function(){
+        $('.ui.accordion').accordion();
+          $(".title").click(function(){
+              $(this).next(".content").slideToggle();
+              $(this).find(".dropdown.icon").toggleClass("rotate");
+          });
+      });
+    </script>
+  @end
+@end

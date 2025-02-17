@@ -1,15 +1,22 @@
-<h3>
-  New Q&A
-</h3>
-<form class="ui form" action="" method="">
-  <div class="field">
-    <label>Question</label>
-    <input type="text" name="question" required />
-  </div>
-  <div class="field">
-    <label>Answer</label>
-    <textarea name="answer" rows="5" required></textarea>
-  </div>
-  <input class="ui button" type="submit" value="Save" />
-  <a class="ui button" href="">Back</a>
-</form>
+@layouts.master({ title: 'Q&A'})
+  <h3>
+    New Q&A
+  </h3>
+  <form
+    class="ui form"
+    action="{{ post ? route('posts.update',{ id: post.id }) : route('qa.store') }}"
+    method="POST"
+  >
+    {{ csrfField() }}
+    <div class="field">
+      <label>Question</label>
+      <input type="text" name="question" value="{{ post ? post.question : '' }}" required />
+    </div>
+    <div class="field">
+      <label>Answer</label>
+      <textarea name="answer" rows="5" required>{{ post ? post.answer : ''}}</textarea>
+    </div>
+    <input class="ui button" type="submit" value="{{post ? 'Update' : 'Save'}}" />
+    <a class="ui button" href="{{route('qa.home')}}">Back</a>
+  </form>
+@end
