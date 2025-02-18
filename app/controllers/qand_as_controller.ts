@@ -31,7 +31,11 @@ const qas: QandA[] = [
 ]
 
 export default class QandAsController {
-  async index({ view, request }: HttpContext) {
+  async index({ view }: HttpContext) {
+    return view.render('pages/QA', { qa: qas })
+  }
+
+  async search({ view, request }: HttpContext) {
     const searchQuery = request.input('txtSearch', '').toLowerCase()
     let filteredQAs = qas
 

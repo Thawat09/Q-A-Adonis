@@ -1,10 +1,10 @@
-@layouts.master({ title: 'Q&A'})
+@layouts.master({ title: 'Q&A Form'})
   <h3>
-    New Q&A
+    {{ post ? 'Edit Q&A' : 'New Q&A' }}
   </h3>
   <form
     class="ui form"
-    action="{{ post ? route('posts.update',{ id: post.id }) : route('qa.store') }}"
+    action="{{ post ? route('qa.update',{ id: post.id }) : route('qa.store') }}"
     method="POST"
   >
     {{ csrfField() }}

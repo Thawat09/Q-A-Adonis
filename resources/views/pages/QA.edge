@@ -1,4 +1,16 @@
 @layouts.master({ title: 'Q&A'})
+  @slot('style')
+    <style>
+      h1 {
+        margin-bottom: 50px !important;
+      }
+
+      .icons {
+        margin-top: 10px;
+        text-align: right;
+      }
+    </style>
+  @end
   <h1 class="ui aligned center header">
     AdonisJS Q&A
   </h1>
@@ -17,3 +29,5 @@
     </script>
   @end
 @end
+
+

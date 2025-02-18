@@ -7,8 +7,9 @@ router.get('/', ({ response }: HttpContext) => {
 })
 
 router.get('/qa', [QaController, 'index']).as('qa.home')
+router.post('/qa/search', [QaController, 'search']).as('qa.search')
 router.get('/qa/create', [QaController, 'create']).as('qa.create')
 router.post('/qa', [QaController, 'store']).as('qa.store')
 router.get('/qa/:id/edit', [QaController, 'edit']).as('qa.edit')
-router.post('/qa/:id/update', [QaController, 'update']).as('posts.update')
+router.post('/qa/:id', [QaController, 'update']).as('qa.update')
 router.get('/qa/:id/delete', [QaController, 'destroy']).as('qa.delete')

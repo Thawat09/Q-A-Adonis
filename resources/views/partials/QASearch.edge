@@ -1,4 +1,6 @@
-<form class="ui form" action="{{ route('qa.home') }}" method="GET">
+<form class="ui form" action="{{ route('qa.search') }}" method="POST">
+  {{ csrfField() }}
+
   <div class="ui action small fluid input">
     <input type="text" placeholder="Search..." name="txtSearch"/>
     <button class="ui button">Search</button>
