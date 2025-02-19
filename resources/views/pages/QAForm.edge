@@ -1,4 +1,4 @@
-@layouts.master({ title: 'Q&A Form'})
+@layouts.master({ title: 'Q&A Form' })
   <h3>
     {{ post ? 'Edit Q&A' : 'New Q&A' }}
   </h3>
@@ -14,9 +14,9 @@
     </div>
     <div class="field">
       <label>Answer</label>
-      <textarea name="answer" rows="5" required>{{ post ? post.answer : ''}}</textarea>
+      <textarea name="answer" rows="5" required>{{ post ? post.answer : '' }}</textarea>
     </div>
-    <input class="ui button" type="submit" value="{{post ? 'Update' : 'Save'}}" />
+    <input class="ui button" type="submit" value="{{post ? 'Update' : 'Save' }}" />
     <a class="ui button" href="{{route('qa.home')}}">Back</a>
   </form>
 @end
