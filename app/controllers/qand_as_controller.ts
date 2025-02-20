@@ -27,7 +27,7 @@ export default class QandAsController {
   }
 
   async search({ view, request }: HttpContext) {
-    const searchQuery = request.input('txtSearch', '').toLowerCase()
+    const searchQuery = (request.input('txtSearch') || '').toLowerCase()
     let filteredQAs = qas
 
     if (searchQuery) {

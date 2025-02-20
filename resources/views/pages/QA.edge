@@ -20,12 +20,12 @@
   @slot('script')
     <script>
       $(document).ready(function(){
-        $('.ui.accordion').accordion();
-          $(".title").click(function(){
-              $(this).next(".content").slideToggle();
-              $(this).find(".dropdown.icon").toggleClass("rotate");
-          });
+      $('.ui.accordion').accordion();
+      $(".title").click(function(){
+          $(this).parent('.ui.accordion').accordion('toggle');
+          $(this).find(".dropdown.icon").toggleClass("rotate");
       });
+    });
     </script>
   @end
 @end
